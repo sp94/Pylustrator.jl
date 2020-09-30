@@ -1,0 +1,4 @@
+name = "Pylustrator"
+uuid = "e5bec534-b9b5-4198-8c6c-e8157877c5d1"
+authors = ["S J Palmer <samuelpalmer94@gmail.com>"]
+version = "0.1.0"
