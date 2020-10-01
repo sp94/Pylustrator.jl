@@ -2,11 +2,16 @@ module Pylustrator
 
 using PyCall, PyPlot, MacroTools
 
+const pylustrator = PyNULL()
+
+function start()
+    copy!(pylustrator, pyimport("pylustrator"))
+    pylustrator.start()
+end
+
 macro pylustrator(expr)
     # use rmlines so stacktrace returns expected line number
     return rmlines(quote
-        pylustrator = pyimport("pylustrator")
-        pylustrator.start()
         # get filename and line position
         stack_position = stacktrace()[1]
         filename = abspath(string(stack_position.file))
